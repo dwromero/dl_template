@@ -1,8 +1,21 @@
-### Deep Learning Template
+## Deep Learning Template
 
-## 1. Installation
+### 1. Installation
 
-## 2. Contribute
+To install the required packages please run:
+
+```
+conda create -n env python=3.10
+conda activate env
+
+conda install -c conda-forge matplotlib
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install lightning -c conda-forge
+pip install ml-collections
+conda install pandas
+```
+
+### 2. Contribute
 
 Before contributing, please make sure that `pre-commit` is installed. To this end, run the following command:
 
@@ -11,7 +24,7 @@ pip install pre-commit  # in case it is not installed
 pre-commit install
 ```
 
-## 3. Usage
+### 3. Usage
 
 To see the pipeline, the best is to run an example that goes through the whole code. To this end, run the following command:
 
