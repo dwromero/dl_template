@@ -1,0 +1,88 @@
+# @package _global_
+
+# global parameters
+device: cuda
+debug: False
+deterministic: False
+num_workers: -1
+seed: 0
+comment: ""
+# datamodules
+dataset:
+  name: ""
+  data_dir: "data"
+  augment: False
+  params:
+    grayscale: False
+# training
+train:
+  do: True
+  mixed_precision: False
+  epochs: -1
+  batch_size: -1
+  grad_clip: 0.0
+  label_smoothing: -1
+  max_epochs_no_improvement: 100
+  track_grad_norm: -1 # -1 for no tracking.
+  accumulate_grad_steps: 1 # Accumulate gradient over different batches.
+  distributed: False
+# network
+net:
+  type: ""
+  num_hidden: -1
+  num_blocks: -1
+  dropout: 0.0
+  dropout_type: Dropout
+  norm: ""
+  nonlinearity: ""
+  block:
+    width_factors: [0.0]
+    type: default
+    prenorm: True
+# convolutions
+conv:
+  type: ""
+  kernel:
+    type: ""
+    num_hidden: -1
+    num_layers: -1
+    omega_0: 0.0
+    input_scale: 0.0
+    bias: True
+    size: -1
+    chang_initialize: True
+    norm: Identity
+    nonlinearity: Identity
+  use_fft: False
+  bias: True
+  padding: "same"
+  stride: 1
+# optimizer
+optimizer:
+  type: ""
+  lr: 0.0
+  mask_lr_ratio: 1.
+  momentum: -1.
+  nesterov: False
+  weight_decay: 0.0
+# scheduler
+scheduler:
+  type: ""
+  decay_steps: -1
+  factor: 1.0
+  patience: -1
+  warmup_epochs: -1
+  mode: "max"
+# testing
+test:
+  batch_size_multiplier: 1
+  before_train: False
+# wandb logging
+wandb:
+  project: dl_template
+  entity: dwromero
+# checkpoint
+pretrained:
+  load: False
+  alias: "best" #Either best or last
+  filename: ""
