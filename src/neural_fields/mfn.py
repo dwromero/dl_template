@@ -70,7 +70,7 @@ class FourierLayer(torch.nn.Module):
         super().__init__()
         # Define the linear class based on the data dimension
         linear_cls = getattr(src_nn, f"Linear{data_dim}d")
-        self.linear = linear_cls(data_dim, out_channels, bias)
+        self.linear = linear_cls(data_dim, out_channels, bias=bias)
         self.omega_0 = omega_0
         self.initialize()
 
